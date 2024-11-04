@@ -51,3 +51,6 @@ TagManager:
   - name: Ground
     uniqueID: 3379234243
     locked: 0
+  - name: Scenery
+    uniqueID: 3198730263
+    locked: 0
