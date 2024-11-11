@@ -15,7 +15,7 @@ public class Follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 targetPos = new Vector3(player.position.x, player.position.y, player.position.z);
+        Vector3 targetPos = new Vector3(player.position.x, player.position.y, 0f);
         transform.position = Vector3.Lerp(transform.position, targetPos, smoothNess * Time.deltaTime);
 
     }
