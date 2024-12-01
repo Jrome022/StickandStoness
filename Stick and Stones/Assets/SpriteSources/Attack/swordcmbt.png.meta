@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9217a16765559544eb3bf1e5c2017054
+guid: defef4dd84dc45a4fbbcce870b2fc1be
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -46,10 +46,10 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.10624573, y: 0.52715564}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 316, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerjumping_0
+      name: swordcmbt_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1f93d9715a360a4687439417752c9f5
-      internalID: -823083897
+      spriteID: e85954230f1b27246af8b9522d7c007e
+      internalID: -265301158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerjumping_1
+      name: swordcmbt_1
       rect:
         serializedVersion: 2
         x: 100
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9ab0db471f8186478359520d7404b8e
-      internalID: -317941910
+      spriteID: e69feb42ddf47304e89574d07f5b371a
+      internalID: -765410886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerjumping_2
+      name: swordcmbt_2
       rect:
         serializedVersion: 2
         x: 200
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b198b46fa8545d6468e1b5bc7bfd649e
-      internalID: -2120987300
+      spriteID: 2caa489f688790e4dacea2a1eb66def0
+      internalID: -1611413709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerjumping_3
+      name: swordcmbt_3
       rect:
         serializedVersion: 2
         x: 300
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02524fa56d583e24d9e4cae82ff430de
-      internalID: 1798583157
+      spriteID: 6d37bbbbd9ba99c46a1f5d2e40487de2
+      internalID: -1719457335
       vertices: []
       indices: 
       edges: []
@@ -184,17 +184,17 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      playerjumping_0: -823083897
-      playerjumping_1: -317941910
-      playerjumping_2: -2120987300
-      playerjumping_3: 1798583157
+      swordcmbt_0: -265301158
+      swordcmbt_1: -765410886
+      swordcmbt_2: -1611413709
+      swordcmbt_3: -1719457335
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
