@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerWeapons : MonoBehaviour
 {
-    [SerializeField] private GameObject[] weapons;
+    public GameObject[] weapons;
 
     private SpriteRenderer sprite;
 
@@ -26,6 +27,14 @@ public class PlayerWeapons : MonoBehaviour
 
     private bool menuUp = false;
 
+    [SerializeField] private GameObject[] weaponDrops;
+
+    private PlayerMovement playerMove;
+
+    private WeaponPickUp pickUp;
+
+    public int arrowCount, stoneCount;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +48,8 @@ public class PlayerWeapons : MonoBehaviour
         replace = replaceObj.GetComponent<UI_ReplaceWeapon>();
 
         leftWeaponNum = -1; rightWeaponNum = -1;
+
+        playerMove = gameObject.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -47,28 +58,24 @@ public class PlayerWeapons : MonoBehaviour
 
         //constantly checks if object can be picked up
         if (canPickUpWeapon && Input.GetKeyDown(KeyCode.E) && maxWeapons != 0){
-                // PickUpWeapon(weaponNum);
-                
-                // if (leftWeaponNum == -1){
-                //     leftWeaponNum = weaponNum;
-                // }
-                // else if (rightWeaponNum == -1){
-                //     rightWeaponNum = weaponNum;
-                // }
-
 
                 
         }
-        else if (maxWeapons == -1){
+        else if (maxWeapons == -1 && menuUp == false){
             pause.ShowReplaceMenu();
             menuUp = true;
             replace.SetSprites();
+            maxWeapons++;
+            playerMove.speed = 0f;
         }
                 
-        if (Input.GetKeyDown(KeyCode.E) && menuUp){
+        if (Input.GetKeyDown(KeyCode.Q) && menuUp){
             HideMenu();
             menuUp = false;
+            playerMove.speed = 5f;
         }
+
+        
     }
 
     public void HideMenu(){
@@ -103,26 +110,37 @@ public class PlayerWeapons : MonoBehaviour
             canPickUpWeapon = true;
             EnableIndicator();
             SetWeaponNumber(other.GetComponent<WeaponPickUp>().weaponNumber);
+            pickUp = other.GetComponent<WeaponPickUp>();
         }
 
         else if (other.gameObject.tag == "Arrow"){
-            pause.arrowCount++;
+            arrowCount++;
             Destroy(other.gameObject);
         }
 
         else if (other.gameObject.tag == "Stone"){
-            pause.stoneCount++;
+            stoneCount++;
             Destroy(other.gameObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        //if exitted trigger is "weapon" disable the indicator disables picking up weapon and weapon number becomes unusable
+        //if exitted trigger is "weapon" disable the indicator disables picking up weapon
         if (other.gameObject.tag == "Weapon"){
             DisableIndicator();
             canPickUpWeapon = false;
-            // weaponNum = -1;
         }
+    }
+
+    public void DropWeapon(int weaponNumber){
+        Instantiate(weaponDrops[weaponNumber], transform.position, Quaternion.identity);
+    }
+
+    public void ReplaceWeapon(){
+        PickUpWeapon(weaponNum);
+        playerMove.speed = 5f;
+        pickUp.DestroyPickUp();
+        menuUp = false;
     }
 
 }

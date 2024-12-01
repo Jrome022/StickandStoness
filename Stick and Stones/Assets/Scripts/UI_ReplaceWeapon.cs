@@ -34,9 +34,6 @@ public class UI_ReplaceWeapon : MonoBehaviour
         weap1.sprite = weapons[player.leftWeaponNum].sprite;
         weap2.sprite = weapons[player.rightWeaponNum].sprite;
         weap3.sprite = weapons[player.weaponNum].sprite;
-        Debug.Log(player.leftWeaponNum);
-        Debug.Log(player.rightWeaponNum);
-        Debug.Log(player.weaponNum);
     }
 
 }

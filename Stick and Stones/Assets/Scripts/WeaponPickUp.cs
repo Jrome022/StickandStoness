@@ -42,7 +42,6 @@ public class WeaponPickUp : MonoBehaviour
                     player.rightWeaponNum = weaponNumber;
                 }
 
-                Debug.Log("Weapon Num: " + player.weaponNum);
 
                 Destroy(this.gameObject);
             }
@@ -73,5 +72,9 @@ public class WeaponPickUp : MonoBehaviour
             indicator.enabled = false;
             canPickUp = false;
         }
+    }
+
+    public void DestroyPickUp(){
+        Destroy(this.gameObject);
     }
 }
