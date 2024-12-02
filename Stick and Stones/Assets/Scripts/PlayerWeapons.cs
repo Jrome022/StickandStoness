@@ -111,6 +111,7 @@ public class PlayerWeapons : MonoBehaviour
             EnableIndicator();
             SetWeaponNumber(other.GetComponent<WeaponPickUp>().weaponNumber);
             pickUp = other.GetComponent<WeaponPickUp>();
+	    GetComponent<Animator>().SetBool("weaponEquipped", true);
         }
 
         else if (other.gameObject.tag == "Arrow"){
