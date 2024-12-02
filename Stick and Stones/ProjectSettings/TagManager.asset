@@ -8,6 +8,8 @@ TagManager:
   - Weapon
   - Arrow
   - Stone
+  - Projectile
+  - Enemy
   layers:
   - Default
   - TransparentFX

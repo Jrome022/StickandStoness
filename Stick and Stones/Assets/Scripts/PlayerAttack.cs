@@ -22,6 +22,9 @@ public class PlayerAttack : MonoBehaviour
     public float attackRangeY;
     
     private PlayerWeapons weapons;
+    private PlayerMovement playerMove;
+    private GameObject enemy;
+    private Menu pause;
 
     public Animator attackAnim;
 
@@ -31,15 +34,54 @@ public class PlayerAttack : MonoBehaviour
 
     public bool facingRight = true;
 
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+
+    public bool KnockFromRight;
+
+    private float dazedTime = 0.6f;
+    public float startDazedTime;
+
     void Start()
     {
         attackAnim = GetComponent<Animator>();
 
         weapons = GetComponent<PlayerWeapons>();
+
+        playerMove = GetComponent<PlayerMovement>();
+
+        pause = GameObject.Find("UI").GetComponent<Menu>();
+
+        pause.SetMaxHealth(health);
     }
 
     // Update is called once per frame
     void Update(){
+        //knockback after being hit
+        if (KBCounter <= 0){
+            playerMove.speed = 2.5f;
+        }
+        else {
+            if (KnockFromRight){
+                playerMove.rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if (!KnockFromRight){
+                playerMove.rb.velocity = new Vector2(KBForce, KBForce);
+            }
+
+            KBCounter -= Time.deltaTime;
+        }
+
+        //stops movement after being hit
+        if (dazedTime<=0){
+            playerMove.speed = 5f;
+        }
+        else {
+            playerMove.speed = 0;
+            dazedTime -= Time.deltaTime;
+        }
+
         // Check if player is facing the correct direction for projectiles
         if (Input.GetKey(KeyCode.D)) {
             facingRight = true;
@@ -147,7 +189,22 @@ public class PlayerAttack : MonoBehaviour
     }
 
     public void DamageTaken(int damage){
+        dazedTime = startDazedTime;
 
+        // Instantiate(hitEffect, transform.position, Quaternion.identity); no hiteffect yet
+        health -= damage;
+        pause.Sethealth(health);
+        Debug.Log("Player Damaged!");
+        KBCounter = KBTotalTime;
+        if (enemy.transform.position.x <= transform.position.x){
+            KnockFromRight = false;
+        }
+        else if (enemy.transform.position.x > transform.position.x){
+            KnockFromRight = true;
+        }
+        if (health<=0){
+            Destroy(this.gameObject);
+        }
     }
 
     void SetWeaponStats(int weaponNum){
@@ -190,6 +247,13 @@ public class PlayerAttack : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Enemy"){
+            enemy = other.gameObject;
+            
         }
     }
 }

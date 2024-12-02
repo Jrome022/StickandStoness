@@ -27,6 +27,8 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject invObj;
     private Inventory inv;
 
+    public Slider slider;
+
     
     // Start is called before the first frame update
     void Start()
@@ -107,5 +109,15 @@ public class Menu : MonoBehaviour
 
     public void QuitLevel(){
         SceneManager.LoadScene(0);
+    }
+
+    //health
+    public void SetMaxHealth(int health){
+        slider.maxValue = health;
+        slider.value = health;
+    }
+
+    public void Sethealth(int health){
+        slider.value = health;
     }
 }
