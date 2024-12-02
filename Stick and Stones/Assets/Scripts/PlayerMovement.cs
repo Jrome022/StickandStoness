@@ -11,9 +11,7 @@ public class PlayerMovement : MonoBehaviour
      public float jumpHeight = 7f;
      public bool isGround = true;
      private bool facingRight = true;
-     public GameObject attackPoint;
-     public float radius;
-     public LayerMask enemies;
+     
      void Start()
      {
 
@@ -40,32 +38,8 @@ public class PlayerMovement : MonoBehaviour
               anim.SetFloat("Run", 0f);
           }
 
-          if (Input.GetMouseButtonDown(0))
-          {
-             
-             anim.SetBool("Attack", true);
-          }
+          
      }
-
-    public void attack()
-    {
-        Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position, radius, enemies);
-
-        foreach (Collider2D enemyGameobject in enemy)
-        {
-            Debug.Log("Hit Enemy");
-        }
-    }
-
-    public void endAttack()
-    {
-        anim.SetBool("Attack", false);
-    }
-
-    private void OnDrawGizmos()
-    {
-         Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
-    }
 
     void Jump()
     {
