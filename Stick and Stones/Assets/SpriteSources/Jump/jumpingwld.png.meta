@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 07a063056e5234042b20b049e1a5e4b5
+guid: 4a4865082f2de3041aa03b4c56d2c6e6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walkingdgr_0
+      name: jumpingwld_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 269c0bfca0e6d364c83ed0c5d901a26a
-      internalID: 1873484817
+      spriteID: ab3451ca318287e419562cb64fe88f08
+      internalID: 732003384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkingdgr_1
+      name: jumpingwld_1
       rect:
         serializedVersion: 2
         x: 100
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aee00ccd81747c04c8c1a594897c67c8
-      internalID: -980230722
+      spriteID: 4216d9c1431e69d4e9390cd5b1525278
+      internalID: -1738888707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkingdgr_2
+      name: jumpingwld_2
       rect:
         serializedVersion: 2
         x: 200
@@ -153,8 +153,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ffd54f0b1cdb8d4980c57502eb4f527
-      internalID: 1876948454
+      spriteID: bc9a25dc6838ec44a8cbc53eef8e653c
+      internalID: 1959890381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jumpingwld_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91376e70346ddd44bf06f90c254684c
+      internalID: 2082088596
       vertices: []
       indices: 
       edges: []
@@ -170,9 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walkingdgr_0: 1873484817
-      walkingdgr_1: -980230722
-      walkingdgr_2: 1876948454
+      jumpingwld_0: 732003384
+      jumpingwld_1: -1738888707
+      jumpingwld_2: 1959890381
+      jumpingwld_3: 2082088596
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

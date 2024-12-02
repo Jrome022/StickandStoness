@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 07a063056e5234042b20b049e1a5e4b5
+guid: 9db5d73410f05a349843cc99970e6dd8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walkingdgr_0
+      name: jumpingshield_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 269c0bfca0e6d364c83ed0c5d901a26a
-      internalID: 1873484817
+      spriteID: 8fc04f5aad257df4ab598219d1e28d94
+      internalID: 1548041853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkingdgr_1
+      name: jumpingshield_1
       rect:
         serializedVersion: 2
         x: 100
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aee00ccd81747c04c8c1a594897c67c8
-      internalID: -980230722
+      spriteID: 69cf16f037c7cf948a2b24b7181f69de
+      internalID: -1536924244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkingdgr_2
+      name: jumpingshield_2
       rect:
         serializedVersion: 2
         x: 200
@@ -153,8 +153,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ffd54f0b1cdb8d4980c57502eb4f527
-      internalID: 1876948454
+      spriteID: 10299de6534e9dd4983d2e402833213f
+      internalID: 1953261727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jumpingshield_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b6f8b2d703b594ab847a73d14f57fb
+      internalID: 1348439650
       vertices: []
       indices: 
       edges: []
@@ -170,9 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walkingdgr_0: 1873484817
-      walkingdgr_1: -980230722
-      walkingdgr_2: 1876948454
+      jumpingshield_0: 1548041853
+      jumpingshield_1: -1536924244
+      jumpingshield_2: 1953261727
+      jumpingshield_3: 1348439650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
