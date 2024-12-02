@@ -15,7 +15,7 @@ public class Player_Attacks : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0)){
-		anim.SetBool("attacks", true);
+		anim.SetBool("attack", true);
 	}
 
     }

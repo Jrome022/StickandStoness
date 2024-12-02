@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
      public Rigidbody2D rb;
@@ -11,9 +12,9 @@ public class PlayerMovement : MonoBehaviour
      public float jumpHeight = 7f;
      public bool isGround = true;
      private bool facingRight = true;
-     void Start()
+     void Awake()
      {
-
+	anim = GetComponent<Animator>();
      }
      void Update()
      {
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
           if (Input.GetKey(KeyCode.Space) && isGround)
           {
               Jump();
-              anim.SetBool("Jump", true);
+              GetComponent<Animator>().SetBool("Jump", true);
               isGround = false;
           }
 
@@ -34,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
           else if (movement < .1f)
           {
-              anim.SetFloat("Run", 0f);
+              GetComponent<Animator>().SetFloat("Run", 0f);
           }
      }
     void Jump()
