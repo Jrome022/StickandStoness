@@ -14,7 +14,7 @@ public class Player_Attacks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)){
+        if (Input.GetKey(KeyCode.Mouse0)){
 		anim.SetBool("attacks", true);
 	}
 

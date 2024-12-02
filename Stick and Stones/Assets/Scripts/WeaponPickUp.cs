@@ -6,6 +6,9 @@ using TMPro;
 
 public class WeaponPickUp : MonoBehaviour
 {
+
+	public Animator anim;	
+
     // public Text indicator;
     public float pickUpRange = 3f;
 
@@ -42,6 +45,7 @@ public class WeaponPickUp : MonoBehaviour
                     player.rightWeaponNum = weaponNumber;
                 }
 
+                Debug.Log("Weapon Num: " + player.weaponNum);
 
                 Destroy(this.gameObject);
             }
@@ -75,6 +79,7 @@ public class WeaponPickUp : MonoBehaviour
     }
 
     public void DestroyPickUp(){
-        Destroy(this.gameObject);
+    	Destroy(this.gameObject);
     }
+   
 }
