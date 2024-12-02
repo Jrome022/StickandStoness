@@ -66,12 +66,10 @@ public class Menu : MonoBehaviour
 
     public void SelectWeap1(){
         selected = player.leftWeaponNum;
-        Debug.Log("1 selected");
     }
 
     public void SelectWeap2(){
         selected = player.rightWeaponNum;
-        Debug.Log("2 selected");
     }
 
     public void ReplaceWeapon(){

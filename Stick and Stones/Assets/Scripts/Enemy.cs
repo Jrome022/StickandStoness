@@ -26,6 +26,12 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     public float jumpInterval = 5f;
 
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+
+    public bool KnockFromRight;
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +48,19 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // transform.Translate(Vector2.left * speed * Time.deltaTime); //temp movement for enemy
+        if (KBCounter <= 0){
+            speed = 2.5f;
+        }
+        else {
+            if (KnockFromRight){
+                rb.velocity = new Vector2(-KBForce, KBForce);
+            }
+            if (!KnockFromRight){
+                rb.velocity = new Vector2(KBForce, KBForce);
+            }
+
+            KBCounter -= Time.deltaTime;
+        }
 
         if (dazedTime<=0){
             speed = 2.5f;
@@ -99,6 +118,13 @@ public class Enemy : MonoBehaviour
         // Instantiate(hitEffect, transform.position, Quaternion.identity); no hiteffect yet
         health -= damage;
         Debug.Log("Enemy Damaged!");
+        KBCounter = KBTotalTime;
+        if (target.position.x <= transform.position.x){
+            KnockFromRight = false;
+        }
+        else if (target.position.x > transform.position.x){
+            KnockFromRight = true;
+        }
         if (health<=0){
             Destroy(this.gameObject);
         }
